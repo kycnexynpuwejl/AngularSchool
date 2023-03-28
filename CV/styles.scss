@@ -2,7 +2,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 .wrapper {
@@ -95,6 +94,48 @@ body {
   background-color: #fffdfd;
   padding: 25px;
   flex: 5;
+
+  h2 {
+    margin: 0px;
+  }
+
+  i {
+    margin: 0px 20px 0px 0px;
+  }
+
+  &__career {
+    &-title {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__experiences {
+    &-title {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__skills {
+    &-title {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+
+      &-title {
+        flex: 3;
+      }
+
+      &-proficiency {
+        flex: 10;
+      }
+    }
+  }
 }
 
 @font-face {
