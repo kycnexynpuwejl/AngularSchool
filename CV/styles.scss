@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #1dd0c7;
+  color: #fffdfd;
+
+  &__info {
+    padding: 25px;
+    background-color: #2aa8a1;
+  }
+
+  &__contacts,
+  &__education,
+  &__languages,
+  &__interests {
+    padding: 25px;
+  }
+}
+
+.main {
+  background-color: #fffdfd;
+  padding: 25px;
+  flex: 4;
+}
