@@ -101,6 +101,9 @@ body {
 
   i {
     margin: 0px 20px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__career {
