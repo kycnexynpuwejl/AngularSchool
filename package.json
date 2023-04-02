@@ -1,0 +1,19 @@
+{
+  "name": "angularschool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kycnexynpuwejl/AngularSchool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kycnexynpuwejl/AngularSchool/issues"
+  },
+  "homepage": "https://github.com/kycnexynpuwejl/AngularSchool#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.9"
+  }
+}
