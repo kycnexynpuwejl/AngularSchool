@@ -1,0 +1,185 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #1dd0c7;
+  color: #fffdfd;
+
+  &__info {
+    padding: 25px;
+    background-color: #2aa8a1;
+  }
+
+  &__contacts,
+  &__education,
+  &__languages,
+  &__interests {
+    padding: 25px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+
+      p {
+        margin: 0px;
+      }
+
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__education {
+    &-item {
+      padding-bottom: 10px;
+
+      p {
+        margin: 0px;
+      }
+
+      &-institution, &-year {
+        color: grey;
+      }
+    }
+  }
+
+  &__languages {
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+
+      p {
+        margin: 0px 10px 0px 0px;
+      }
+
+      &-skill {
+        color: grey;
+      }
+    }
+  }
+
+  &__interests {
+    p {
+      margin: 0px 0px 10px 0px;
+    }
+  }
+}
+
+.main {
+  background-color: #fffdfd;
+  padding: 25px;
+  flex: 5;
+
+  h2 {
+    margin: 0px;
+  }
+
+  i {
+    margin: 0px 20px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__career {
+    &-title {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__experiences {
+    &-title {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__skills {
+    &-title {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+
+      &-title {
+        flex: 3;
+      }
+
+      &-proficiency {
+        flex: 10;
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?hpxesn');
+  src:  url('fonts/icomoon.eot?hpxesn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?hpxesn') format('truetype'),
+    url('fonts/icomoon.woff?hpxesn') format('woff'),
+    url('fonts/icomoon.svg?hpxesn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-profile:before {
+  content: "\e923";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-briefcase:before {
+  content: "\e9ae";
+}
+.icon-power:before {
+  content: "\e9b5";
+}
+.icon-sphere:before {
+  content: "\e9c9";
+}
