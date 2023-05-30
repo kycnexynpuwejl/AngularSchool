@@ -24,3 +24,9 @@ for (let i = 0; i < tempoChangeButtons.length; i++) {
         tempo.textContent = metronome.tempo;
     });
 }
+const beatChangeButtons = document.getElementsByClassName('beat-change');
+for (let i = 0; i < tempoChangeButtons.length; i++) {
+    beatChangeButtons[i].addEventListener('click', function () {
+        metronome.beatsPerBar += parseInt(this.dataset.change);
+    });
+}
