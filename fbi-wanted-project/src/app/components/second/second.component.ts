@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-second',
+  selector: 'fbi-second',
   templateUrl: './second.component.html',
   styleUrls: ['./second.component.scss']
 })

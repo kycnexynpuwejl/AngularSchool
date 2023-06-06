@@ -1,4 +1,5 @@
 import {Component, OnInit } from '@angular/core';
+import {provideRoutes} from "@angular/router";
 
 @Component({
   selector: 'fbi-sidebar',
@@ -13,4 +14,5 @@ export class SidebarComponent implements OnInit {
 
   }
 
+  protected readonly provideRoutes = provideRoutes;
 }

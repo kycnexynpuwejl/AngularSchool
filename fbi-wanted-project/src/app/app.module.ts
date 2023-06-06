@@ -13,6 +13,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 const routes: Routes = [
   { path: 'first-component', component: FirstComponent },
@@ -36,7 +37,8 @@ const routes: Routes = [
     MatDialogModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

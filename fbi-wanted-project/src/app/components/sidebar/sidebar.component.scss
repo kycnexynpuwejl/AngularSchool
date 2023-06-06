@@ -1,7 +1,11 @@
-section {
+.sidebar {
+  padding: 5px;
   display: flex;
   flex-direction: column;
-  width: 100px;
-  height: auto;
-  background-color: chocolate;
+  gap: 5px;
+  width: 150px;
+  height: 100%;
+  background-color: #6f7d8c;
 }
+
+
