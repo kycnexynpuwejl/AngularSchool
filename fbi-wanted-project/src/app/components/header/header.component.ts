@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {LoginDialogComponent} from "./login-dialog/login-dialog.component";
 
 @Component({
   selector: 'fbi-header',
@@ -6,16 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  public loginLogoutText: string = 'Login';
 
-  public prop: any;
-
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
+
   }
 
-  emitOutputProp(event: any) {
-    this.prop = event;
-    console.log('prop: ', this.prop);
+  loginLogoutClicked() {
+    this.dialog.open(LoginDialogComponent);
   }
 }

@@ -1,7 +1,4 @@
-<section>
-  HEADER
-  <fbi-sidebar
-    [inputProp]="'asddfsafgdsf'"
-    (outputProp)="emitOutputProp($event)"
-  ></fbi-sidebar>
-</section>
+<div class="header">
+  <div class="logo" routerLink="/">FBI WANTED</div>
+  <button class="login-button" mat-raised-button (click)="loginLogoutClicked()">{{ loginLogoutText }}</button>
+</div>

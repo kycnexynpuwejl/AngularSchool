@@ -1,6 +1,18 @@
-section {
+.header {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 50px;
-  background-color: aqua;
+  background-color: #77a0a9;
+}
+
+.logo {
+  user-select: none;
+  margin-left: 40px;
+}
+
+.login-button {
+  margin-right: 20px;
 }
