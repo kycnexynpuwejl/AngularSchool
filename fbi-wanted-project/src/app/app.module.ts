@@ -24,6 +24,10 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {FormsModule} from "@angular/forms";
 import {AuthService} from "./services/auth/auth.service";
 import {AuthGuard} from "./guards/auth/auth.guard";
+import {StoreModule} from "@ngrx/store";
+import {EffectsModule} from "@ngrx/effects";
+import {authReducer} from "./state/auth/auth.reducers";
+import {AuthEffects} from "./state/auth/auth.effects";
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
@@ -43,6 +47,8 @@ const routes: Routes = [
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    StoreModule.forRoot({ auth: authReducer }),
+    EffectsModule.forRoot([AuthEffects]),
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
@@ -60,7 +66,8 @@ const routes: Routes = [
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    AuthEffects
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule]

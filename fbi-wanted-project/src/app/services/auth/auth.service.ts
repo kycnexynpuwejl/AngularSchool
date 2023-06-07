@@ -1,29 +1,30 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import * as AuthActions from '../../state/auth/auth.actions';
+import * as AuthSelectors from '../../state/auth/auth.selectors';
+import {User} from "firebase/auth";
+import {AppState} from "../../app.state";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthService {
-  currentUser: any;
-
-  constructor(private afAuth: AngularFireAuth) {
-    this.currentUser = this.afAuth.authState;
-  }
+  constructor(private store: Store<AppState>) {}
 
   login(email: string, password: string) {
-    return this.afAuth.signInWithEmailAndPassword(email, password);
+    this.store.dispatch(AuthActions.loginStart({ email, password }));
   }
 
   logout() {
-    return this.afAuth.signOut();
+    this.store.dispatch(AuthActions.logout());
   }
 
   isLoggedIn(): Observable<boolean> {
-    return this.currentUser.pipe(
-      map(user => !!user)
-    );
+    return this.store.select(AuthSelectors.selectIsAuthenticated);
+  }
+
+  getUser(): Observable<User | null> {
+    return this.store.select(AuthSelectors.selectUser);
   }
 }
