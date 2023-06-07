@@ -1,5 +1,5 @@
 <mat-grid-list [cols]="5" rowHeight="1:1.2">
-  <mat-grid-tile *ngFor="let wanted of wantedList.items">
+  <mat-grid-tile *ngFor="let wanted of wantedList?.items">
     <div class="card">
       <img [src]="wanted.images[0].original" alt="Card image">
       <div class="card-content">
@@ -10,7 +10,7 @@
   </mat-grid-tile>
 </mat-grid-list>
 <mat-paginator [pageSize]="20"
-               [length]="wantedList.total"
+               [length]="wantedList?.total"
                [pageIndex]="pageIndex"
                [hidePageSize]="true"
                (page)="handlePageEvent($event)">
