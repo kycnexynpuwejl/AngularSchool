@@ -1,1 +1,18 @@
-<p>first works!</p>
+<mat-grid-list [cols]="5" rowHeight="1:1.2">
+  <mat-grid-tile *ngFor="let wanted of wantedList?.items">
+    <div class="card">
+      <img [src]="wanted.images[0].original" alt="Card image">
+      <div class="card-content">
+        <h2>{{ wanted.title | titlecase }}</h2>
+        <p *ngIf="wanted.sex">{{ wanted.sex }}</p>
+      </div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-paginator [pageSize]="20"
+               [length]="wantedList?.total"
+               [pageIndex]="pageIndex"
+               [hidePageSize]="true"
+               (page)="handlePageEvent($event)">
+</mat-paginator>
+
