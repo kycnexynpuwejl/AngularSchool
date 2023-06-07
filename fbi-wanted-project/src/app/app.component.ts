@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RouteChangeService} from "./services/route-change/route-change.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fbi-wanted-project';
+
+  constructor(private routeChangeService: RouteChangeService) {}
 }

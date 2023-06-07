@@ -1,25 +1,18 @@
-<mat-grid-list [cols]="5">
+<mat-grid-list [cols]="5" rowHeight="1:1.2">
   <mat-grid-tile *ngFor="let wanted of wantedList.items">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title-group>
-          <mat-card-title class="card-title">{{ wanted.title | titlecase }}</mat-card-title>
-          <mat-card-subtitle *ngIf="wanted.sex">{{ wanted.sex }}</mat-card-subtitle>
-          <img mat-card-sm-image src="{{wanted.images[0].original }}" alt="Photo is missed">
-        </mat-card-title-group>
-      </mat-card-header>
-      <mat-card-content *ngIf="wanted.reward_text">
-        {{ wanted.reward_text }}
-      </mat-card-content>
-    </mat-card>
+    <div class="card">
+      <img [src]="wanted.images[0].original" alt="Card image">
+      <div class="card-content">
+        <h2>{{ wanted.title | titlecase }}</h2>
+        <p *ngIf="wanted.sex">{{ wanted.sex }}</p>
+      </div>
+    </div>
   </mat-grid-tile>
 </mat-grid-list>
-<mat-paginator #paginator
-               [pageSize]="20"
+<mat-paginator [pageSize]="20"
                [length]="wantedList.total"
                [pageIndex]="pageIndex"
                [hidePageSize]="true"
-               (page)="handlePageEvent($event)"
-               >
+               (page)="handlePageEvent($event)">
 </mat-paginator>
 

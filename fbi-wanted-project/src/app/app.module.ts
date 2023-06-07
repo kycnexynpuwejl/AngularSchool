@@ -19,11 +19,16 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {environment} from "../environments/environment";
+import {AngularFireModule} from "@angular/fire/compat";
+import {FormsModule} from "@angular/forms";
+import {AuthService} from "./services/auth/auth.service";
+import {AuthGuard} from "./guards/auth/auth.guard";
 
 const routes: Routes = [
   { path: '', component: LandingComponent},
-  { path: 'first-component', component: FirstComponent },
-  { path: 'second-component', component: SecondComponent },
+  { path: 'first-component', component: FirstComponent, canActivate: [AuthGuard] },
+  { path: 'second-component', component: SecondComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -37,6 +42,7 @@ const routes: Routes = [
     LandingComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
@@ -49,9 +55,13 @@ const routes: Routes = [
     HttpClientModule,
     MatCardModule,
     MatGridListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent],
   exports: [RouterModule]
 })
